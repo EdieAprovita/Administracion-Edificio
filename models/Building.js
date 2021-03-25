@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const edificioSchema = new Schema(
+const buildingSchema = new Schema(
 	{
 		mantenimiento: {
 			type: Number,
@@ -26,4 +26,4 @@ const edificioSchema = new Schema(
 	}
 )
 
-module.exports = Edificio = mongoose.model('Edificio', edificioSchema)
+module.exports = Building = mongoose.model('Building', buildingSchema)

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const departamentoSchema = new Schema({
+const apartmentSchema = new Schema({
 	user: {
 		type: mongoose.Types.ObjectId,
 		ref: 'User',
@@ -19,7 +19,19 @@ const departamentoSchema = new Schema({
 		unique: true,
 	},
 
-	mantenimeinto: {
+	saldo: {
+		type: Number,
+		required: true,
+		default: 0,
+	},
+
+	aportaciones: {
+		type: Number,
+		required: true,
+		default: 0,
+	},
+
+	adeudos: {
 		type: Number,
 		required: true,
 		default: 0,
@@ -28,14 +40,9 @@ const departamentoSchema = new Schema({
 	statusAdeudos: {
 		type: String,
 		required: true,
-		enum: ['Adeudos', 'Sin Adeudos'],
+		enum: ['Adeudo', 'Sin Adeudos'],
 		default: 'Sin Adeudos',
-	},
-
-	adeudo: {
-		type: Number,
-		required: true,
 	},
 })
 
-module.exports = Departamento = mongoose.model('Departamento', departamentoSchema)
+module.exports = Apartment = mongoose.model('Apartment', apartmentSchema)
